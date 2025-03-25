@@ -1,9 +1,16 @@
-﻿Console.WriteLine("Please type your name: ");
+﻿string name = GetName();
 
 var name = Console.ReadLine();
 var date = DateTime.UtcNow;
 
-Menu(name, date);
+Menu(name);
+
+string GetName()
+{
+    Console.WriteLine("Please type your name: ");
+    var name = Console.ReadLine();
+    return name;
+}
 
 void DivisionGame(string message)
 {
