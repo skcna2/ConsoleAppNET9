@@ -1,25 +1,34 @@
-﻿namespace ConsoleAppNET9
+﻿using AppCalcConsole.Models;
+
+namespace ConsoleAppNET9
 {
     internal class Helpers
     {
-        static List<string> games = new();
+        internal static List<Game> games = new();  // Definimos una lista de clase Game
         internal static string GetName()
         {
             Console.WriteLine("Please type your name: ");
-            var name = Console.ReadLine();
-            return name;
+            string? name = Console.ReadLine();
+            return name ?? "";  // si el valor de la izquierda es null, usa el de la derecha(se puede poner tambien string.Empty)
         }
 
         internal static void AddToHistory(int gameScore, string gameType)
         {
-            games.Add($"{DateTime.Now} -  {gameType} : {gameScore}");
+            games.Add(new Game
+            {
+                Date = DateTime.Now,
+                Score = gameScore,
+                Type = gameType
+            });
+
+              
         }
 
         internal static int[] GetDivisionNumbers()
         {
-            var random = new Random();
-            var firstRandom = random.Next(1, 99);
-            var secondRandom = random.Next(1, 99);
+            Random random = new Random();
+            int firstRandom = random.Next(1, 99);
+            int secondRandom = random.Next(1, 99);
 
             var result = new int[2];
 
@@ -42,9 +51,9 @@
             Console.Clear();
             Console.WriteLine("Games History");
             Console.WriteLine("---------------------------------------");
-            foreach (string game in games)
+            foreach (Game game in games)
             {
-                Console.WriteLine(game);
+                Console.WriteLine($"{game.Date} - {game.Type} : {game.Score} pts");
 
             }
             Console.WriteLine("---------------------------------------\n");

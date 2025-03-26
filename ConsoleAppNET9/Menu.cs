@@ -5,7 +5,7 @@
         GameEngine gameEngine = new();
         internal void ShowMenu(string name, DateTime date)
         {
-            var valor = true;
+            bool valor = true;
             do
             {
                 Console.WriteLine("------------------------------------------");

@@ -4,9 +4,9 @@ string name = Helpers.GetName();
 
 Menu menu = new();
 
-var date = DateTime.UtcNow;
+DateTime date = DateTime.UtcNow;
 
-var games = new List<string>();  // Creamos una lista para almacenar las jugadas previas
+List<string> games = new();  // Creamos una lista para almacenar las jugadas previas
 
 menu.ShowMenu(name, date);
 

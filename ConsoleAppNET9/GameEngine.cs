@@ -15,12 +15,12 @@
             for (int i = 0; i < 5; i++)
             {
                 Console.Clear();
-                var divisionNumbers = Helpers.GetDivisionNumbers();
+                int[] divisionNumbers = Helpers.GetDivisionNumbers();
                 firstRandom = divisionNumbers[0];
                 secondRandom = divisionNumbers[1];
 
                 Console.WriteLine($"{firstRandom} / {secondRandom}");
-                var result = Console.ReadLine();
+                string? result = Console.ReadLine();
 
                 if (int.Parse(result) == firstRandom / secondRandom)
                 {
@@ -49,14 +49,13 @@
 
             var score = 0;
             var random = new Random();
-            int firstRandom;
-            int secondRandom;
+            
 
             for (int i = 0; i < 5; i++)
             {
                 Console.Clear();
-                firstRandom = random.Next(1, 9);
-                secondRandom = random.Next(1, 9);
+                int firstRandom = random.Next(1, 9);
+                int secondRandom = random.Next(1, 9);
 
                 Console.WriteLine($"{firstRandom} * {secondRandom}");
                 var result = Console.ReadLine();
