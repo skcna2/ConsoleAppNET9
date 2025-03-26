@@ -1,6 +1,7 @@
 ﻿string name = GetName();
 
 var date = DateTime.UtcNow;
+var games = new List<string>();  // Creamos una lista para almacenar las jugadas previas
 
 Menu(name);
 
@@ -13,7 +14,7 @@ string GetName()
 
 void DivisionGame(string message)
 {
-    {
+  
         Console.Clear();
         Console.WriteLine(message);
 
@@ -44,15 +45,14 @@ void DivisionGame(string message)
 
         }
 
-        Console.WriteLine($"Your final score is {score}");
-
-
-    }
-}
+        Console.WriteLine($"Your final score is {score}. Press any key to go back to the main menu");
+        Console.ReadLine();
+        AddToHistory(score, "Division");
+ }
 
 void MultiplicationGame(string message)
 {
-    {
+    
         Console.Clear();
         Console.WriteLine(message);
 
@@ -83,15 +83,14 @@ void MultiplicationGame(string message)
 
         }
 
-        Console.WriteLine($"Your final score is {score}");
-
-
-    }
-}
+        Console.WriteLine($"Your final score is {score}. Press any key to go back to the main menu");
+        Console.ReadLine();
+        AddToHistory(score, "Multiplication");
+ }
 
 void SubstractionGame(string message)
 {
-    {
+  
         Console.Clear();
         Console.WriteLine(message);
 
@@ -122,10 +121,11 @@ void SubstractionGame(string message)
 
         }
 
-        Console.WriteLine($"Your final score is {score}");
+     
 
-
-    }
+    Console.WriteLine($"Your final score is {score}. Press any key to go back to the main menu");
+    Console.ReadLine();
+    AddToHistory(score, "Substraction");
 }
 
 void AdditionGame(string message)
@@ -161,9 +161,17 @@ void AdditionGame(string message)
 
     }
 
-    Console.WriteLine($"Your final score is {score}");
+    Console.WriteLine($"Your final score is {score}. Press any key to go back to the main menu");
+    Console.ReadLine();
+    AddToHistory(score, "Addition");
+    
 
     
+}
+
+void AddToHistory(int gameScore, string gameType)
+{
+    games.Add($"{DateTime.Now} -  {gameType} : {gameScore}");
 }
 
 int[] GetDivisionNumbers()
@@ -194,6 +202,7 @@ void Menu(string name)
         Console.WriteLine("------------------------------------------");
         Console.WriteLine($"Hello {name.ToUpper()}. It's {date.DayOfWeek}. This is your math's game. That's great that you're working on improving yourself\n");
         Console.WriteLine(@$"What game would you like to play today? Choose from the options below: 
+                            V - View Previous Games
                             A - Addition
                             S - Subtraction
                             M - Multiplication
@@ -206,6 +215,9 @@ void Menu(string name)
 
         switch (gameSelected.Trim().ToLower())
         {
+            case "v":
+                GetGames();
+                break;
             case "a":
                 AdditionGame("Addition game ");
                 break;
@@ -234,3 +246,17 @@ void Menu(string name)
     
 }
 
+void GetGames()
+{
+    Console.Clear();
+    Console.WriteLine("Games History");
+    Console.WriteLine("---------------------------------------");
+    foreach (string game in games)
+    {
+        Console.WriteLine(game);
+
+    }
+    Console.WriteLine("---------------------------------------\n");
+    Console.WriteLine("Press any key to return to Main Menu");
+    Console.ReadLine();
+}
