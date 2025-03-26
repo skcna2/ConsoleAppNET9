@@ -1,6 +1,7 @@
 ﻿string name = GetName();
 
 var date = DateTime.UtcNow;
+
 var games = new List<string>();  // Creamos una lista para almacenar las jugadas previas
 
 Menu(name);
