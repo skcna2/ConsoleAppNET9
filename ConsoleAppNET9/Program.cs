@@ -188,42 +188,49 @@ int[] GetDivisionNumbers()
 }
 void Menu(string name)
 {
-    Console.WriteLine("------------------------------------------");
-    Console.WriteLine($"Hello {name.ToUpper()}. It's {date.DayOfWeek}. This is your math's game. That's great that you're working on improving yourself\n");
-    Console.WriteLine(@$"What game would you like to play today? Choose from the options below: 
-A - Addition
-S - Subtraction
-M - Multiplication
-D - Division
-Q - Quit the program"); // @$  - Para escribir en varias líneas
-    Console.WriteLine("-------------------------------------------");
-
-    var gameSelected = Console.ReadLine();
-
-
-    switch (gameSelected.Trim().ToLower())
+    var valor = true;
+    do
     {
-        case "a":
-            AdditionGame("Addition game ");
-            break;
-        case "s":
-            SubstractionGame("Substraction game ");
-            break;
-        case "m":
-            MultiplicationGame("Multiplication game ");
-            break;
-        case "d":
-            DivisionGame("Division game ");
-            break;
-        case "q":
-            Console.WriteLine("Goodbye");
-            Environment.Exit(1);
-            break;
-        default:
-            Console.WriteLine("Opción no válida");
-            Environment.Exit(1);
-            break;
+        Console.WriteLine("------------------------------------------");
+        Console.WriteLine($"Hello {name.ToUpper()}. It's {date.DayOfWeek}. This is your math's game. That's great that you're working on improving yourself\n");
+        Console.WriteLine(@$"What game would you like to play today? Choose from the options below: 
+                            A - Addition
+                            S - Subtraction
+                            M - Multiplication
+                            D - Division
+                            Q - Quit the program"); // @$  - Para escribir en varias líneas
+        Console.WriteLine("-------------------------------------------");
 
-    }
+        var gameSelected = Console.ReadLine();
+
+
+        switch (gameSelected.Trim().ToLower())
+        {
+            case "a":
+                AdditionGame("Addition game ");
+                break;
+            case "s":
+                SubstractionGame("Substraction game ");
+                break;
+            case "m":
+                MultiplicationGame("Multiplication game ");
+                break;
+            case "d":
+                DivisionGame("Division game ");
+                break;
+            case "q":
+                Console.WriteLine("Goodbye");
+                valor = false;
+                break;
+            default:
+                Console.WriteLine("Opción no válida, pulsa cualquier tecla para continuar ");
+                Console.ReadLine();
+                break;
+
+        }
+    } 
+    while (valor == true); 
+    
+    
 }
 
