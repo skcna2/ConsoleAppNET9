@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppNET9", "ConsoleAppNET9\ConsoleAppNET9.csproj", "{72B2858E-3401-403E-AEDA-12842B9AEB9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCalcConsole", "ConsoleAppNET9\AppCalcConsole.csproj", "{72B2858E-3401-403E-AEDA-12842B9AEB9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
