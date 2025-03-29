@@ -12,16 +12,10 @@ namespace ConsoleAppNET9
             return name ?? "";  // si el valor de la izquierda es null, usa el de la derecha(se puede poner tambien string.Empty)
         }
 
-        internal static void AddToHistory(int gameScore, string gameType)
+        internal static void AddToHistory(int gameScore, GameType gameType)
         {
-            games.Add(new Game
-            {
-                Date = DateTime.Now,
-                Score = gameScore,
-                Type = gameType
-            });
-
-              
+            games.Add(new Game {Date = DateTime.Now, Score = gameScore, Type = gameType});
+  
         }
 
         internal static int[] GetDivisionNumbers()

@@ -1,4 +1,6 @@
-﻿namespace ConsoleAppNET9
+﻿using AppCalcConsole.Models;
+
+namespace ConsoleAppNET9
 {
     internal class GameEngine
     {
@@ -40,7 +42,7 @@
 
             Console.WriteLine($"Your final score is {score}. Press any key to go back to the main menu");
             Console.ReadLine();
-            Helpers.AddToHistory(score, "Division");
+            Helpers.AddToHistory(score, GameType.Division);
         }
 
         internal void MultiplicationGame(string message)
@@ -79,7 +81,7 @@
 
             Console.WriteLine($"Your final score is {score}. Press any key to go back to the main menu");
             Console.ReadLine();
-            Helpers.AddToHistory(score, "Multiplication");
+            Helpers.AddToHistory(score, GameType.Multiplication);
         }
 
         internal void SubstractionGame(string message)
@@ -121,7 +123,7 @@
 
             Console.WriteLine($"Your final score is {score}. Press any key to go back to the main menu");
             Console.ReadLine();
-            Helpers.AddToHistory(score, "Substraction");
+            Helpers.AddToHistory(score, GameType.Substraction);
         }
 
         internal void AdditionGame(string message)
@@ -160,7 +162,7 @@
 
             Console.WriteLine($"Your final score is {score}. Press any key to go back to the main menu");
             Console.ReadLine();
-            Helpers.AddToHistory(score, "Addition");
+            Helpers.AddToHistory(score, GameType.Addition);
 
 
 
