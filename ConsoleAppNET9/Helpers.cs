@@ -60,5 +60,15 @@ namespace ConsoleAppNET9
             Console.WriteLine("Press any key to return to Main Menu");
             Console.ReadLine();
         }
+
+        internal static string? ValidateResult(string result)
+        {
+            while(string.IsNullOrEmpty(result) || !Int32.TryParse(result, out _))
+            {
+                Console.WriteLine("Your answer needs to be an integer. Try again.");
+                result = Console.ReadLine();
+            }
+            return result;
+        }
     }
 }

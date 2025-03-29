@@ -22,6 +22,8 @@
                 Console.WriteLine($"{firstRandom} / {secondRandom}");
                 string? result = Console.ReadLine();
 
+                result = Helpers.ValidateResult(result);
+
                 if (int.Parse(result) == firstRandom / secondRandom)
                 {
                     Console.WriteLine("Your answer was correct! Type any key for the next question. ");
@@ -59,6 +61,7 @@
 
                 Console.WriteLine($"{firstRandom} * {secondRandom}");
                 var result = Console.ReadLine();
+                result = Helpers.ValidateResult(result);
 
                 if (int.Parse(result) == firstRandom * secondRandom)
                 {
@@ -98,6 +101,7 @@
 
                 Console.WriteLine($"{firstRandom} - {secondRandom}");
                 var result = Console.ReadLine();
+                result = Helpers.ValidateResult(result);
 
                 if (int.Parse(result) == firstRandom - secondRandom)
                 {
@@ -138,6 +142,7 @@
 
                 Console.WriteLine($"{firstRandom} + {secondRandom}");
                 var result = Console.ReadLine();
+                result = Helpers.ValidateResult(result);
 
                 if (int.Parse(result) == firstRandom + secondRandom)
                 {
